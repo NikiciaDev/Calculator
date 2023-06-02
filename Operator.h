@@ -4,9 +4,10 @@ class Operator {
 public:
 	char sign;
 	short preference;
+	short position;
 
 	Operator();
-	Operator(char sign, short preference);
+	Operator(char sign, short preference, short position);
 
 	static bool isValid(char sign);
 };
