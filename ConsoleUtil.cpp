@@ -14,4 +14,10 @@ namespace cu {
 		cu::receive(equation);
 		cu::print("Verifying validity of equation...");
 	}
+
+	void abort(const std::string& message, const int& exitCode) {
+		cu::print(message);
+		cu::print("Exiting with code " + exitCode);
+		exit(exitCode);
+	}
 }
