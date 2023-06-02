@@ -42,6 +42,9 @@
     <ClCompile Include="ConsoleUtil.cpp">
       <Filter>Source Files\Util</Filter>
     </ClCompile>
+    <ClCompile Include="ExtractionUtil.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Number.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files\Util</Filter>
     </ClInclude>
     <ClInclude Include="ConsoleUtil.h">
+      <Filter>Header Files\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="ExtractionUtil.h">
       <Filter>Header Files\Util</Filter>
     </ClInclude>
   </ItemGroup>

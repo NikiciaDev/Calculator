@@ -9,6 +9,7 @@
 std::string equation;
 std::vector<Number>* numbers;
 std::vector<Operator>* operators;
+Number result;
 
 int main(int argc, int* argv[]) {
 	while (true) {
@@ -21,7 +22,7 @@ int main(int argc, int* argv[]) {
 		cu::print("Extracting operators from equation!");
 		operators = eu::extractOperators(equation);
 		cu::print("Finnished! Solving Equation...");
-		Number result = mu::solve(*numbers, *operators);
+		result = mu::solve(*numbers, *operators);
 		cu::print("Finnished!");
 		cu::print(equation + " = " + std::to_string(result.value));
 
