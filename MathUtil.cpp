@@ -5,7 +5,6 @@ namespace mu {
 		bool inNumber = std::isdigit(*equation.begin()) || *equation.begin() == '-';
 		bool hadDot = false, wasLastDot = false, expectingDigit = false;
 
-
 		if (!std::isdigit(*(equation.end() - 1))) return false;
 
 		for (char c : equation) {
