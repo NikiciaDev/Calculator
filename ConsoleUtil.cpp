@@ -12,7 +12,6 @@ namespace cu {
 	void getEquation(std::string& equation) {
 		cu::print("Please enter the equation you would like to have solved!");
 		cu::receive(equation);
-		cu::print("Verifying validity of equation...");
 	}
 
 	void abort(const std::string& message, const int& exitCode) {

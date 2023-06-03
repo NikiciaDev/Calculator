@@ -14,10 +14,12 @@ Number result;
 int main(int argc, int* argv[]) {
 	while (true) {
 		cu::getEquation(equation);
+		if (equation == "exit") break;
 
 		//erase all spaces from string
 		equation.erase(std::remove_if(equation.begin(), equation.end(), isspace), equation.end());
 
+		cu::print("Verifying validity of equation...");
 		if (!mu::verifyEquationValidity(equation)) {
 			cu::abort("Equation seems to be invalid! Aborting!", -1);
 		}
