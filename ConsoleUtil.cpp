@@ -14,7 +14,7 @@ namespace cu {
 		cu::receive(equation);
 	}
 
-	void abort(const std::string& message, const int& exitCode) {
+	void abort(const std::string& message, const int exitCode) {
 		cu::print(message);
 		cu::print("Exiting with code " + exitCode);
 		exit(exitCode);
