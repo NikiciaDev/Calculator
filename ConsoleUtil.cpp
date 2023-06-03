@@ -10,7 +10,7 @@ namespace cu {
 	}
 
 	void getEquation(std::string& equation) {
-		cu::print("Please enter the equation you would like to have solved!");
+		cu::print("Please enter the equation you would like to have solved or type \"exit\" to exit!");
 		cu::receive(equation);
 	}
 
