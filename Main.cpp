@@ -7,8 +7,8 @@
 #include "Operator.h"
 
 std::string equation;
-std::vector<Number>* numbers;
-std::vector<Operator>* operators;
+std::vector<Number>* numbers = new std::vector<Number>;
+std::vector<Operator>* operators = new std::vector<Operator>;
 Number result;
 
 int main(int argc, int* argv[]) {
@@ -22,10 +22,8 @@ int main(int argc, int* argv[]) {
 			cu::abort("Equation seems to be invalid! Aborting!", -1);
 		}
 
-		cu::print("Extracting numbers from equation!");
-		numbers = eu::extractNumbers(equation);
-		cu::print("Extracting operators from equation!");
-		operators = eu::extractOperators(equation);
+		cu::print("Extracting numbers and Operators from equation!");
+		eu::extractNumbersAndOperators(equation, *numbers, *operators);
 		cu::print("Finnished! Solving Equation...");
 		result = mu::solve(*numbers, *operators);
 		cu::print("Finnished!");

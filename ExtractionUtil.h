@@ -5,9 +5,6 @@
 #include "Operator.h"
 
 namespace eu {
-	//extracts numbers from the given equation and returns them in a pointer to a vector
-	std::vector<Number>* extractNumbers(const std::string& equation);
-
-	//extracts operators from the given equation and returns them in a pointer to a vector
-	std::vector<Operator>* extractOperators(const std::string& equation);
+	//extracts numbers and operators from the given equation and fills them into the given vectors
+	void extractNumbersAndOperators(const std::string& equation, std::vector<Number>& numbers, std::vector<Operator>& operators);
 }
