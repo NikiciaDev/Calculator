@@ -12,4 +12,8 @@ public:
 	static bool isValid(char sign);
 
 	static short evaluatePreference(char sign);
+
+	bool operator < (const Operator& _operator);
+
+	bool operator > (const Operator& _operator);
 };

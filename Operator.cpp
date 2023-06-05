@@ -34,3 +34,13 @@ short Operator::evaluatePreference(char sign) {
 		break;
 	}
 }
+
+bool Operator::operator < (const Operator& _operator) {
+	if (this->preference == _operator.preference) return this->position > _operator.position;
+	return this->preference < _operator.preference;
+}
+
+bool Operator::operator > (const Operator& _operator) {
+	if (this->preference == _operator.preference) return this->position < _operator.position;
+	return this->preference > _operator.preference;
+}
