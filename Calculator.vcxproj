@@ -132,7 +132,8 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MathUtil.cpp" />
     <ClCompile Include="Number.cpp" />
-    <ClCompile Include="NumberUtil.cpp" />
+    <ClCompile Include="NumberBuilder.cpp" />
+    <ClInclude Include="NumberBuilder.h" />
     <ClCompile Include="Operator.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -140,7 +141,6 @@
     <ClInclude Include="ExtractionUtil.h" />
     <ClInclude Include="MathUtil.h" />
     <ClInclude Include="Number.h" />
-    <ClInclude Include="NumberUtil.h" />
     <ClInclude Include="Operator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

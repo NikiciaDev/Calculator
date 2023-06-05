@@ -3,6 +3,8 @@
 #include <string>
 #include "Number.h"
 #include "Operator.h"
+#include "NumberBuilder.h"
+#include "ConsoleUtil.h"
 
 namespace eu {
 	//extracts numbers and operators from the given equation and fills them into the given vectors

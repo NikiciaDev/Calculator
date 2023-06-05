@@ -45,8 +45,8 @@
     <ClCompile Include="ExtractionUtil.cpp">
       <Filter>Source Files\Util</Filter>
     </ClCompile>
-    <ClCompile Include="NumberUtil.cpp">
-      <Filter>Source Files\Util</Filter>
+    <ClCompile Include="NumberBuilder.cpp">
+      <Filter>Source Files\Classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -65,8 +65,8 @@
     <ClInclude Include="ExtractionUtil.h">
       <Filter>Header Files\Util</Filter>
     </ClInclude>
-    <ClInclude Include="NumberUtil.h">
-      <Filter>Header Files\Util</Filter>
+    <ClInclude Include="NumberBuilder.h">
+      <Filter>Header Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

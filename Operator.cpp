@@ -11,3 +11,26 @@ Operator::Operator(char sign, short preference, short position) : sign(sign), pr
 bool Operator::isValid(char sign) {
 	return sign == '+' || sign == '-' || sign == '*' || sign == '/' || sign == '^';
 }
+
+short Operator::evaluatePreference(char sign) {
+	switch (sign) {
+	default:
+		return -1;
+		break;
+	case '+':
+		return 0;
+		break;
+	case '-':
+		return 0;
+		break;
+	case '*':
+		return 1;
+		break;
+	case '/':
+		return 1;
+		break;
+	case '^':
+		return 2;
+		break;
+	}
+}

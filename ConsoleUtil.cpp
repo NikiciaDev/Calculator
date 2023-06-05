@@ -5,6 +5,10 @@ namespace cu {
 		std::cout << string << "\n";
 	}
 
+	void devPrint(const std::string& string) {
+		if(displayDeveloperComments) std::cout << "[DEV]: " << string << "\n";
+	}
+
 	void receive(std::string& string) {
 		std::cin >> string;
 	}
