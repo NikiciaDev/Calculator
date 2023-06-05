@@ -3,7 +3,6 @@
 namespace eu {
 	void extractNumbersAndOperators(const std::string& equation, std::vector<Number>& numbers, std::vector<Operator>& operators) {
 		short posInNum = 0, posInOp = 0;
-		bool inNumber = true, hadOperator = false;
 		NumberBuilder numberBuilder;
 
 		for (short s = 0; s <= equation.size(); s++) {
@@ -18,6 +17,7 @@ namespace eu {
 					std::string s = "pushed "; s += c; s += " into operator vector at position " + std::to_string(posInOp);
 					cu::devPrint(s);
 					operators.push_back(Operator(c, Operator::evaluatePreference(c), posInOp));
+					posInOp++;
 				}
 
 				posInNum++;
