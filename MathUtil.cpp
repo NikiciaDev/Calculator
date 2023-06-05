@@ -43,8 +43,9 @@ namespace mu {
 
 	Number solve(std::vector<Number>& numbers, std::vector<Operator>& operators) {
 		Number result;
+		std::sort(operators.begin(), operators.end());
 
-		
+
 
 		return result;
 	}

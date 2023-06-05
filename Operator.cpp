@@ -36,11 +36,11 @@ short Operator::evaluatePreference(char sign) {
 }
 
 bool Operator::operator < (const Operator& _operator) {
-	if (this->preference == _operator.preference) return this->position > _operator.position;
-	return this->preference < _operator.preference;
+	if (this->preference == _operator.preference) return this->position < _operator.position;
+	return this->preference > _operator.preference;
 }
 
 bool Operator::operator > (const Operator& _operator) {
-	if (this->preference == _operator.preference) return this->position < _operator.position;
-	return this->preference > _operator.preference;
+	if (this->preference == _operator.preference) return this->position > _operator.position;
+	return this->preference < _operator.preference;
 }

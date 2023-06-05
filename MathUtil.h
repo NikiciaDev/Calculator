@@ -1,8 +1,10 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <algorithm>
 #include "Number.h"
 #include "Operator.h"
+#include "ConsoleUtil.h"
 
 namespace mu {
 	//returns 0 if the equation is not valid, returns non 0 when equation is valid
