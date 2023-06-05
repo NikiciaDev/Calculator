@@ -3,7 +3,7 @@
 namespace mu {
 	bool verifyEquationValidity(std::string& equation) {
 		bool inNumber = std::isdigit(*equation.begin()) || *equation.begin() == '-';
-		bool hadDot = false, wasLastDot = false, expectingDigit = false;
+		bool hadDot = false, wasLastDot = false, expectingDigit = false, wasDivision = false;
 
 		if (!std::isdigit(*(equation.end() - 1))) return false;
 
@@ -11,6 +11,8 @@ namespace mu {
 			if (c == '.' && !inNumber) return false;
 
 			if (std::isdigit(c)) {
+				if (wasDivision && c == '0') return false;
+				wasDivision = false;
 				wasLastDot = false;
 				inNumber = true;
 				expectingDigit = false;
@@ -23,6 +25,7 @@ namespace mu {
 						continue;
 					}
 				} else if (Operator::isValid(c) && inNumber) {
+					wasDivision = c == '/';
 					inNumber = false;
 					wasLastDot = false;
 					hadDot = false;
@@ -47,7 +50,10 @@ namespace mu {
 		for (Operator o : operators) {
 			short nextDown = findNextNonUsedDown(numbers, o.position), nextUp = findNextNonUsedUp(numbers, o.position + 1);
 
-			std::cout << nextDown << " | " << nextUp << "\n";
+			//im not proud of this either... im sorry :(
+			std::string s = "current calculation: ";
+			s += std::to_string(numbers[nextDown].value); s += " "; s += o.sign; s += " "; s += std::to_string(numbers[nextUp].value);
+			cu::devPrint(s);
 
 			Number n = o.operate(numbers[nextDown], numbers[nextUp]);
 			numbers[nextDown] = n;
