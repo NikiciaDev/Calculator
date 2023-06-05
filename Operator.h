@@ -1,4 +1,6 @@
 #pragma once
+#include "Number.h"
+#include "ConsoleUtil.h"
 
 class Operator {
 public:
@@ -8,6 +10,8 @@ public:
 
 	Operator();
 	Operator(char sign, short preference, short position);
+
+	Number operate(Number number1, Number number2);
 
 	static bool isValid(char sign);
 

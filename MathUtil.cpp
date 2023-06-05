@@ -42,11 +42,32 @@ namespace mu {
 	}
 
 	Number solve(std::vector<Number>& numbers, std::vector<Operator>& operators) {
-		Number result;
 		std::sort(operators.begin(), operators.end());
 
+		for (Operator o : operators) {
+			short nextDown = findNextNonUsedDown(numbers, o.position), nextUp = findNextNonUsedUp(numbers, o.position + 1);
 
+			std::cout << nextDown << " | " << nextUp << "\n";
 
-		return result;
+			Number n = o.operate(numbers[nextDown], numbers[nextUp]);
+			numbers[nextDown] = n;
+			numbers[nextUp].used = true;
+		}
+
+		return numbers[0];
+	}
+
+	short findNextNonUsedDown(std::vector<Number>& numbers, short position) {
+		for (position; position >= 0; position--) {
+			if (!numbers[position].used) return position;
+		}
+		return -1;
+	}
+
+	short findNextNonUsedUp(std::vector<Number>& numbers, short position) {
+		for (position; position < numbers.size(); position++) {
+			if (!numbers[position].used) return position;
+		}
+		return -1;
 	}
 }

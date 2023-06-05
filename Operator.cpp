@@ -35,6 +35,33 @@ short Operator::evaluatePreference(char sign) {
 	}
 }
 
+Number Operator::operate(Number number1, Number number2) {
+	Number numberOut;
+	numberOut.position = number1.position;
+
+	switch (this->sign) {
+	default:
+		cu::abort("Failed to operate on numbers!", -1);
+		break;
+	case '+':
+		numberOut.value = number1.value + number2.value;
+		break;
+	case '-':
+		numberOut.value = number1.value - number2.value;
+		break;
+	case '*':
+		numberOut.value = number1.value * number2.value;
+		break;
+	case '/':
+		numberOut.value = number1.value / number2.value;
+		break;
+	case '^':
+		numberOut.value = pow(number1.value, number2.value);
+		break;
+	}
+	return numberOut;
+}
+
 bool Operator::operator < (const Operator& _operator) {
 	if (this->preference == _operator.preference) return this->position < _operator.position;
 	return this->preference > _operator.preference;

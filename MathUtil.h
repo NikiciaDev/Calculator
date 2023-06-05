@@ -12,4 +12,10 @@ namespace mu {
 
 	//solves the given equation if provided in a number vector and an operator vector
 	Number solve(std::vector<Number>& numbers, std::vector<Operator>& operators);
+
+	//helper function for solve()
+	short findNextNonUsedDown(std::vector<Number>& numbers, short position);
+
+	//helper function for solve()
+	short findNextNonUsedUp(std::vector<Number>& numbers, short position);
 }
