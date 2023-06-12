@@ -41,6 +41,8 @@ int main(int argc, char* argv[]) {
 		numbers->clear();
 		operators->clear();
 	}
+	numbers->shrink_to_fit();
+	operators->shrink_to_fit();
 	
 	delete numbers;
 	delete operators;
